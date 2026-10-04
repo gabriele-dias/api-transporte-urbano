@@ -12,23 +12,6 @@ Permitir que aplicativos móveis consumam dados atualizados via endpoints REST.
 
 Apoiar usuários na tomada de decisão sobre deslocamentos, reduzindo tempo perdido em congestionamentos e atrasos.
 
-📂 Estrutura do projeto
-Código
-api-transporte-urbano/
-├── app/
-│   ├── __init__.py
-│   ├── rotas.py
-│   ├── servicos/
-│   │   ├── google_maps.py
-│   │   └── sptrans.py
-│   └── configuracao.py
-├── requirements.txt
-├── Dockerfile
-├── docker-compose.yml
-├── .env
-└── README.md
-🔧 Instalação
-Clone o repositório:
 
 bash
 git clone https://github.com/gabriele-dias/api-transporte-urbano.git
