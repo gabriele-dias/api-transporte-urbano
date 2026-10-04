@@ -1,21 +1,42 @@
-# api-transporte-urbano
-A API de Transporte Urbano é um sistema desenvolvido em Python/Flask que fornece informações em tempo real sobre trânsito e transportes públicos. Ela integra dados de fontes externas como o Google Maps Traffic API (para congestionamento e velocidade média) e a API da SPTrans (para posição e status de linhas de ônibus em São Paulo).
+# API Transporte Urbano
 
-API Transporte Urbano
-A API Transporte Urbano é um sistema desenvolvido em Python/Flask que fornece informações em tempo real sobre trânsito e transportes públicos.
-Ela integra dados de fontes externas como o Google Maps Traffic API (congestionamento e velocidade média) e a API da SPTrans (posição e status de linhas de ônibus em São Paulo).
+A **API Transporte Urbano** é um sistema desenvolvido em **Python/Flask** que fornece informações em tempo real sobre **trânsito** e **transportes públicos**.  
+Ela integra dados de fontes externas como o **Google Maps Traffic API** (congestionamento e velocidade média) e a **API da SPTrans** (posição e status de linhas de ônibus em São Paulo).
 
-🎯 Objetivo
-Centralizar informações de mobilidade urbana em um único serviço.
+---
 
-Permitir que aplicativos móveis consumam dados atualizados via endpoints REST.
+## 🎯 Objetivo
+- Centralizar informações de mobilidade urbana em um único serviço.  
+- Permitir que aplicativos móveis consumam dados atualizados via endpoints REST.  
+- Apoiar usuários na tomada de decisão sobre deslocamentos, reduzindo tempo perdido em congestionamentos e atrasos.  
 
-Apoiar usuários na tomada de decisão sobre deslocamentos, reduzindo tempo perdido em congestionamentos e atrasos.
+---
 
+## 📂 Estrutura do projeto
+api-transporte-urbano/
+├── app/
+│   ├── init.py
+│   ├── rotas.py
+│   ├── servicos/
+│   │   ├── google_maps.py
+│   │   └── sptrans.py
+│   └── configuracao.py
+├── requirements.txt
+├── Dockerfile
+├── docker-compose.yml
+├── .env
+└── README.md
 
-bash
-git clone https://github.com/gabriele-dias/api-transporte-urbano.git
-cd api-transporte-urbano
+Código
+
+---
+
+## 🔧 Instalação
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/gabriele-dias/api-transporte-urbano.git
+   cd api-transporte-urbano
 Crie um ambiente virtual e instale as dependências:
 
 bash
@@ -38,11 +59,13 @@ A API estará disponível em:
 Código
 http://localhost:5000
 📌 Endpoints
-GET /traffic → retorna dados de trânsito e transportes públicos.
-Exemplo:
+GET /traffic
+Retorna dados de trânsito e transportes públicos.
 
-Código
-http://localhost:5000/traffic?origem=-23.55,-46.63&destino=-23.56,-46.64
+Exemplo de requisição:
+
+bash
+curl "http://localhost:5000/traffic?origem=-23.55,-46.63&destino=-23.56,-46.64"
 Resposta:
 
 json
@@ -58,5 +81,7 @@ json
 Centralização: o app mobile consome apenas esta API.
 
 Escalabilidade: pode ser expandida para outras cidades e serviços.
+
+Interdisciplinaridade
 
 Interdisciplinaridade: conecta TI, urbanismo e mobilidade sustentável.
